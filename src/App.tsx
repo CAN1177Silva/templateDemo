@@ -5,6 +5,10 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  function hello(name: string) {
+    console.log('%c Line:10 🍒', 'color:#93c0a4', name)
+  }
+  hello('manJi')
   return (
     <>
       <div>
