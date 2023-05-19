@@ -11,7 +11,7 @@
     "eslint": "eslint --max-warnings=0",
     "pre-check": "tsc && npx lint-staged",
     "stylelint": "stylelint",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
