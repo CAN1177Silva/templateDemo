@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "eslint": "eslint --max-warnings=0",
     "pre-check": "tsc && npx lint-staged",
-    "stylelint": "stylelint"
+    "stylelint": "stylelint",
+    "postinstall": "husky install"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
