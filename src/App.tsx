@@ -4,6 +4,7 @@ import './App.css'
 
 function App() {
   const num = 0
+  const zrx = 9
   const [count, setCount] = useState(0)
   return (
     <>
