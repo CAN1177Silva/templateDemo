@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import LayoutPage from '@/components/LayoutPage'
+import { Routes, Route } from 'react-router-dom'
+
+import Home from '@/pages/home'
+import Order from '@/pages/order'
+import Set from '@/pages/set'
 
 function App() {
-  const [count, setCount] = useState(0)
   return (
     <>
-      <div className='card'>
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-      </div>
+      <LayoutPage > 
+        <Routes>
+          <Route path='home' element={<Home />} />
+          <Route path='order' element={<Order />} />
+          <Route path='set' element={<Set />} />
+        </Routes>
+      </LayoutPage>
     </>
   )
 }
