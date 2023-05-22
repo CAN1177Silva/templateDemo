@@ -11,7 +11,6 @@ const Home: React.FC = props => {
   const getUserInfoFn = async () => {
     const res = await getUserInfo()
     setMovieList(res.splice(0, 10))
-    console.log('%c Line:8 🥖 res', 'color:#3f7cff', res)
   }
 
   useEffect(() => {
