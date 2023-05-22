@@ -1,62 +1,77 @@
-import React, { useState } from 'react'
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined
-} from '@ant-design/icons'
+import React, { useMemo, useState } from 'react'
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import { Layout, Menu, Button, theme } from 'antd'
 import styles from './index.module.less'
 
-import { useNavigate} from "react-router-dom"
+import { useLocation, useNavigate } from 'react-router-dom'
+
+import { getMenuItemsByRoute } from './router'
+import { Route } from '@/routes'
 
 const { Header, Sider, Content } = Layout
 
+interface ILayoutPageProps {
+  children: React.ReactNode
+  routes: Route[]
+}
 
+// const breadcrumbNameMap = {}
+// routes.forEach(item => {
+//   const key = item.path
+//   const value = item.name
+//   breadcrumbNameMap[key] = value
+// })
 
-const LayoutPage: React.FC<any> = ({children}) => {
+const LayoutPage: React.FC<ILayoutPageProps> = props => {
+  const { routes, children } = props
+  console.log('%c Line:20 🍯 children', 'color:#465975', children)
   const [collapsed, setCollapsed] = useState(false)
-
+  const { pathname } = useLocation()
   const navigate = useNavigate()
 
   const {
     token: { colorBgContainer }
   } = theme.useToken()
 
-  return (
-    <Layout style={{ height: '100vh', width: "100vw" }}>
+  const menuItems = useMemo(() => {
+    return getMenuItemsByRoute(routes)
+  }, [routes])
 
+  // const location = useLocation()
+  // const pathSnippets = location.pathname.split('/').filter(i => i)
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // const extraBreadcrumbItems = pathSnippets.map((_, index) => {
+  //   const url = `/${pathSnippets.slice(0, index + 1).join('/')}`
+  //   return (
+  //     <Breadcrumb.Item key={url}>
+  //       <Link to={url}>{breadcrumbNameMap[url]}</Link>
+  //     </Breadcrumb.Item>
+  //   )
+  // })
+
+  // const breadcrumbItems = [].concat(extraBreadcrumbItems)
+
+  return (
+    <Layout style={{ height: '100vh', width: '100vw' }}>
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className={styles.demoLogo} >
-          
-          <img className={styles.img} src='https://upload.wikimedia.org/wikipedia/en/1/12/Megalo_Box_poster.jpg' alt='logo' />
-          </div>
+        <div className={styles.demoLogo}>
+          <img
+            className={styles.img}
+            src='https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/f2cb36cceb6ee33fa963c85b13d2298e.jpe'
+            alt='logo'
+          />
+        </div>
         <Menu
           theme='dark'
           mode='inline'
-          defaultSelectedKeys={['1']}
+          defaultOpenKeys={[`/${pathname.split('/')[1]}`]}
+          selectedKeys={[`/${pathname.split('/')[1]}`]}
           onClick={key => {
-            console.log("%c Line:37 🥒 key", "color:#ed9ec7", key.key);
+            console.log('%c Line:37 🥒 key', 'color:#ed9ec7', key.key)
             navigate(key.key)
           }}
-          items={[
-            {
-              key: 'home',
-              icon: <UserOutlined />,
-              label: 'home'
-            },
-            {
-              key: 'order',
-              icon: <VideoCameraOutlined />,
-              label: 'order'
-            },
-            {
-              key: 'set',
-              icon: <UploadOutlined />,
-              label: 'set'
-            }
-          ]}
+          items={menuItems}
         />
       </Sider>
       <Layout>
@@ -71,6 +86,8 @@ const LayoutPage: React.FC<any> = ({children}) => {
               height: 64
             }}
           />
+          {/* 面包屑 */}
+          {/* <Breadcrumb className={styles.breadcrumb}>{breadcrumbItems}</Breadcrumb> */}
         </Header>
         <Content
           style={{

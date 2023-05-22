@@ -1,22 +1,8 @@
-import LayoutPage from '@/components/LayoutPage'
-import { Routes, Route } from 'react-router-dom'
-
-import Home from '@/pages/home'
-import Order from '@/pages/order'
-import Set from '@/pages/set'
+import RenderRoutes from './components/RenderRoutes'
+import routes from './routes'
 
 function App() {
-  return (
-    <>
-      <LayoutPage > 
-        <Routes>
-          <Route path='home' element={<Home />} />
-          <Route path='order' element={<Order />} />
-          <Route path='set' element={<Set />} />
-        </Routes>
-      </LayoutPage>
-    </>
-  )
+  return <RenderRoutes routes={routes} />
 }
 
 export default App
