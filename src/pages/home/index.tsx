@@ -25,7 +25,6 @@ const Home: React.FC = props => {
         {movieList.length === 0 ? (
           <Spin size='large' className={styles.spin} />
         ) : (
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           movieList.map((item: any) => {
             return (
               <div key={item.id} className={styles.show}>
