@@ -1,4 +1,17 @@
 .homeWrap {
   height: calc(100vh - 140px);
+  overflow-y: auto;
   background: #f7f8fa;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+
+  .show {
+    margin: 20px auto;
+    object-fit: cover;
+  }
 }
