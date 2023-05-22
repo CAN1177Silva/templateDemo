@@ -38,5 +38,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "liveServer.settings.port": 5502,
-  "cSpell.words": ["blance", "Sider"]
+  "cSpell.words": ["blance", "Sider"],
+  "compile-hero.disable-compile-files-on-did-save-code": false
 }
