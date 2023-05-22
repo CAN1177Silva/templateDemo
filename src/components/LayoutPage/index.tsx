@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 import { getMenuItemsByRoute } from './router'
 import { Route } from '@/routes'
+import { useModel } from '@/store'
 
 const { Header, Sider, Content } = Layout
 
@@ -28,6 +29,7 @@ const LayoutPage: React.FC<ILayoutPageProps> = props => {
   const [collapsed, setCollapsed] = useState(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
+  const { count } = useModel('order')
 
   const {
     token: { colorBgContainer }
@@ -86,6 +88,7 @@ const LayoutPage: React.FC<ILayoutPageProps> = props => {
               height: 64
             }}
           />
+          <span>count的值是:{count}</span>
           {/* 面包屑 */}
           {/* <Breadcrumb className={styles.breadcrumb}>{breadcrumbItems}</Breadcrumb> */}
         </Header>

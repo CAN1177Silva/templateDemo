@@ -1,4 +1,4 @@
-import { UserOutlined } from '@ant-design/icons'
+import { HomeOutlined } from '@ant-design/icons'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import { Route } from './index'
 
@@ -10,6 +10,6 @@ export default [
     path: '/home',
     access: [],
     element: ErrorBoundary(HomePage),
-    icon: UserOutlined
+    icon: HomeOutlined
   }
 ] as unknown as Route[]

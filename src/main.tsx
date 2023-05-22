@@ -6,10 +6,14 @@ import { ConfigProvider } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 import { HashRouter as Router } from 'react-router-dom'
 
+import { StoreProvider } from '@/store'
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ConfigProvider locale={zhCN}>
-    <Router basename='/'>
-      <App />
-    </Router>
+    <StoreProvider>
+      <Router basename='/'>
+        <App />
+      </Router>
+    </StoreProvider>
   </ConfigProvider>
 )

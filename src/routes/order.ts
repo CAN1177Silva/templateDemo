@@ -1,4 +1,4 @@
-import { VideoCameraOutlined } from '@ant-design/icons'
+import { OrderedListOutlined } from '@ant-design/icons'
 import { Route } from './index'
 
 import ErrorBoundary from '@/components/ErrorBoundary'
@@ -11,6 +11,6 @@ export default [
     path: '/order',
     access: [],
     element: ErrorBoundary(OrderPage),
-    icon: VideoCameraOutlined
+    icon: OrderedListOutlined
   }
 ] as unknown as Route[]

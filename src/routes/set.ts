@@ -1,4 +1,4 @@
-import { UploadOutlined } from '@ant-design/icons'
+import { SettingOutlined } from '@ant-design/icons'
 import { Route } from './index'
 import ErrorBoundary from '@/components/ErrorBoundary'
 
@@ -10,6 +10,6 @@ export default [
     path: '/set',
     access: [],
     element: ErrorBoundary(SetPage),
-    icon: UploadOutlined
+    icon: SettingOutlined
   }
 ] as unknown as Route[]
