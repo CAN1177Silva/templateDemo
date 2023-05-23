@@ -27,8 +27,7 @@ const Home: React.FC = props => {
           movieList.map((item: any) => {
             return (
               <div key={item.id} className={styles.show}>
-                <div>{item.data[0].name}</div>
-                <img className={styles.img} src={item.data[0].poster} alt='' />
+                <img src={item.data[0].shareImage} alt='' />
               </div>
             )
           })
