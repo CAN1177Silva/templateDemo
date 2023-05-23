@@ -44,7 +44,7 @@ export class SchoolStorage<T> implements IStorage<T> {
 export const tokenStorage = new SchoolStorage<string>('token', '')
 
 interface IUser {
-  name?: string
+  username?: string
   userId?: number
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   auth?: any

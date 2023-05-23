@@ -3,6 +3,7 @@ import { ReactElement } from 'react'
 import home from './home'
 import order from './order'
 import set from './set'
+import login from './login'
 
 export interface Route {
   name?: string
@@ -23,4 +24,4 @@ export interface Route {
   routes?: Route[]
 }
 
-export default [...home, ...order, ...set] as Route[]
+export default [...home, ...order, ...set, ...login] as Route[]

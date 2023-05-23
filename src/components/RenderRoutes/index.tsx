@@ -51,6 +51,9 @@ const RenderRoutes: React.FC<RenderRoutesProps> = ({ routes }) => {
     }
     return getFlatRoutes(routes)
   }, [routes])
+
+  console.log('%c Line:38 🍓 noLayoutRoutes', 'color:#2eafb0', noLayoutRoutes)
+
   return (
     <>
       {mapObj.current[pathname] ? (

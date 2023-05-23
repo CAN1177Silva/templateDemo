@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { getMenuItemsByRoute } from './router'
 import { Route } from '@/routes'
 import { useModel } from '@/store'
+import UserInfo from '../UserInfo'
 
 const { Header, Sider, Content } = Layout
 
@@ -60,7 +61,7 @@ const LayoutPage: React.FC<ILayoutPageProps> = props => {
         <div className={styles.demoLogo}>
           <img
             className={styles.img}
-            src='https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/f2cb36cceb6ee33fa963c85b13d2298e.jpe'
+            src='https://preview.redd.it/puwdwgzm8vf61.png?width=1080&crop=smart&auto=webp&v=enabled&s=f664cf0649723fcaa8c85153f1f6cc1a5cdf2abd'
             alt='logo'
           />
         </div>
@@ -77,18 +78,21 @@ const LayoutPage: React.FC<ILayoutPageProps> = props => {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
-          <Button
-            type='text'
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 64,
-              height: 64
-            }}
-          />
-          <span>count的值是:{count}</span>
+        <Header style={{ padding: 0, background: colorBgContainer }} className={styles.header}>
+          <div>
+            <Button
+              type='text'
+              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+              style={{
+                fontSize: '16px',
+                width: 64,
+                height: 64
+              }}
+            />
+            <span>count的值是:{count}</span>
+          </div>
+          <UserInfo />
           {/* 面包屑 */}
           {/* <Breadcrumb className={styles.breadcrumb}>{breadcrumbItems}</Breadcrumb> */}
         </Header>
