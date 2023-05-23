@@ -105,18 +105,6 @@ export function getQueryParam(key: string) {
 }
 
 /**
- * 获取当前环境的通用路由
- */
-export function getPrefixUrlByEnv() {
-  const { href, host } = window.location
-  let prefixUrl = ''
-  if (href.includes('xiongmaoboshi')) {
-    prefixUrl = `${host}/distribution`
-  }
-  return prefixUrl
-}
-
-/**
  * 上传文件
  * @param accept string 接受的文件类型
  * @param callback {Function} 回调
