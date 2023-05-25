@@ -9,6 +9,7 @@ import { getMenuItemsByRoute } from './router'
 import { Route } from '@/routes'
 import { useModel } from '@/store'
 import UserInfo from '../UserInfo'
+import FullScreen from '../FullScreen'
 
 const { Header, Sider, Content } = Layout
 
@@ -92,7 +93,11 @@ const LayoutPage: React.FC<ILayoutPageProps> = props => {
             />
             <span>count的值是:{count}</span>
           </div>
-          <UserInfo />
+
+          <div>
+            <FullScreen />
+            <UserInfo />
+          </div>
           {/* 面包屑 */}
           {/* <Breadcrumb className={styles.breadcrumb}>{breadcrumbItems}</Breadcrumb> */}
         </Header>
