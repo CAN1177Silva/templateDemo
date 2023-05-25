@@ -71,7 +71,6 @@ const LogInPage: React.FC = () => {
                   value={username}
                   size='large'
                   maxLength={80}
-                  className='ant-default'
                   onChange={e => {
                     setUsername(e.target.value)
                   }}
@@ -86,7 +85,6 @@ const LogInPage: React.FC = () => {
               >
                 <Input.Password
                   value={password}
-                  className='ant-default'
                   size='large'
                   placeholder='123456'
                   onChange={e => {
@@ -97,7 +95,7 @@ const LogInPage: React.FC = () => {
               </Form.Item>
               <Button
                 size='large'
-                className='ant-default'
+                className='login-btn'
                 type='primary'
                 htmlType='submit'
                 loading={loading}

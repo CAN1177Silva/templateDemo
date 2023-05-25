@@ -5,6 +5,12 @@ module.exports = {
     'stylelint-config-recess-order' // 配置stylelint css属性书写顺序插件
   ],
   rules: {
-    'selector-class-pattern': null
+    'selector-class-pattern': null,
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ['global', 'local']
+      }
+    ]
   }
 }
