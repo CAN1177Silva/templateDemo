@@ -1,5 +1,6 @@
 # templateDemo
-react+ts+vite的后台管理模板，包含代码规范
+react+ts+vite的后台管理模板，属于自定义脚手架的内置模版
+自定义脚手架：https://www.npmjs.com/package/zkz
 
 
 
